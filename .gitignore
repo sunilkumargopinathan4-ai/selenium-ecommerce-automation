@@ -1,0 +1,35 @@
+
+# Maven build output
+target/
+
+# Eclipse IDE files
+.project
+.classpath
+.settings/
+.metadata/
+*.launch
+
+# Java compiled files
+*.class
+
+# Test reports and generated files
+test-output/
+allure-results/
+allure-report/
+screenshots/
+logs/
+*.log
+
+# Local configurations and secrets
+.env
+.env.*
+config-local.properties
+
+# Browser driver executables
+chromedriver.exe
+geckodriver.exe
+msedgedriver.exe
+
+# Operating system files
+.DS_Store
+Thumbs.db
