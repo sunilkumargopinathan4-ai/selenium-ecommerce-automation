@@ -11,6 +11,7 @@ public class CartPage extends BasePage {
 
     private final By emptyCartMessage =
             By.id("empty_cart");
+    
 
     public CartPage(WebDriver driver) {
         super(driver);
@@ -21,6 +22,7 @@ public class CartPage extends BasePage {
         return By.cssSelector(
                 "#product-" + productId + " " + selector);
     }
+    
 
     public String getProductName(int productId) {
 
@@ -72,5 +74,13 @@ public class CartPage extends BasePage {
                 price.replace("Rs.", "")
                      .replace(",", "")
                      .trim());
+    }
+    private final By checkoutButton =
+            By.cssSelector("a.check_out");
+    public CheckoutPage proceedToCheckout() {
+
+        click(checkoutButton);
+
+        return new CheckoutPage(driver);
     }
 }
