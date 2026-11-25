@@ -91,16 +91,29 @@ For environments requiring a manually configured ChromeDriver:
 mvn clean test "-Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER"
 ```
 
+
 ## Latest Verified Test Result
 
 | Metric | Result |
 |---|---|
-| Tests Executed | 1 |
-| Passed | 1 |
+| Tests Executed | 3 |
+| Passed | 3 |
 | Failed | 0 |
 | Skipped | 0 |
 | Build Status | SUCCESS |
 | Browser | Chrome |
+| Execution Time | 52.55 seconds |
+
+## Automated Test Scenarios
+
+| Test ID | Scenario | Type | Status |
+|---|---|---|---|
+| TC_HOME_001 | Homepage title verification | Smoke | PASS |
+| TC_LOGIN_001 | Login page navigation | Functional | PASS |
+| TC_LOGIN_002 | Login with invalid credentials | Negative | PASS |
+
+
+
 
 ## Troubleshooting Experience
 

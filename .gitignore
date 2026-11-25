@@ -33,3 +33,5 @@ msedgedriver.exe
 # Operating system files
 .DS_Store
 Thumbs.db
+
+surefire-reports/
