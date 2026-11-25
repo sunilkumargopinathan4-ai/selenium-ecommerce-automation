@@ -93,17 +93,19 @@ mvn clean test "-Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER"
 
 
 
+
 ## Latest Verified Test Result
 
 | Metric | Result |
 |---|---|
-| Tests Executed | 4 |
-| Passed | 4 |
+| Tests Executed | 5 |
+| Passed | 5 |
 | Failed | 0 |
+| Errors | 0 |
 | Skipped | 0 |
 | Build Status | SUCCESS |
 | Browser | Chrome |
-| Execution Time | 43.49 seconds |
+| Execution Time | 104.9 seconds |
 
 ## Automated Test Scenarios
 
@@ -112,7 +114,9 @@ mvn clean test "-Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER"
 | TC_HOME_001 | Homepage title verification | Smoke | PASS |
 | TC_LOGIN_001 | Login page navigation | Functional | PASS |
 | TC_LOGIN_002 | Login with invalid credentials | Negative | PASS |
-| TC_REG_001 | User registration and account deletion | End-to-End | PASS |
+| TC_REG_001 | Registration and account deletion | End-to-End | PASS |
+| TC_AUTH_001 | Valid login, logout and account cleanup | End-to-End | PASS |
+
 
 
 

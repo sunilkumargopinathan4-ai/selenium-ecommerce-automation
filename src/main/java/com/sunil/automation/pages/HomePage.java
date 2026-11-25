@@ -18,6 +18,9 @@ public class HomePage extends BasePage {
     private final By accountDeleted =
             By.cssSelector("[data-qa='account-deleted']");
 
+    private final By logoutLink =
+            By.cssSelector("a[href='/logout']");
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -41,5 +44,14 @@ public class HomePage extends BasePage {
 
     public String getAccountDeletedMessage() {
         return getText(accountDeleted);
+    }
+
+    public LoginPage logout() {
+        click(logoutLink);
+        return new LoginPage(driver);
+    }
+
+    public boolean isLoggedIn() {
+        return !driver.findElements(logoutLink).isEmpty();
     }
 }

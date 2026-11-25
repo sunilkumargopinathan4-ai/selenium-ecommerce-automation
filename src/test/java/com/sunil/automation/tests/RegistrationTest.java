@@ -1,7 +1,7 @@
 
 package com.sunil.automation.tests;
 
-import java.util.UUID;
+import com.sunil.automation.utils.TestDataGenerator;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,12 +16,11 @@ public class RegistrationTest extends BaseTest {
     @Test(groups = {"regression", "e2e"})
     public void verifySuccessfulRegistration() {
 
-        String name = "Automation Test User";
+    	String name = TestDataGenerator.generateName();
 
-        String email = "qa_" + UUID.randomUUID()
-                + "@example.com";
+    	String email = TestDataGenerator.generateEmail();
 
-        String password = "DemoTest@123";
+    	String password = TestDataGenerator.generatePassword();
 
         HomePage homePage = new HomePage(driver);
 
