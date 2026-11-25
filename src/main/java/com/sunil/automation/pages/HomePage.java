@@ -20,6 +20,10 @@ public class HomePage extends BasePage {
 
     private final By logoutLink =
             By.cssSelector("a[href='/logout']");
+    
+    
+    private final By productsLink =
+            By.cssSelector("a[href='/products']");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -54,4 +58,13 @@ public class HomePage extends BasePage {
     public boolean isLoggedIn() {
         return !driver.findElements(logoutLink).isEmpty();
     }
+    
+    
+    public ProductsPage navigateToProductsPage() {
+
+        click(productsLink);
+
+        return new ProductsPage(driver);
+    }
+
 }
