@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.sunil.automation.base.BaseTest;
 import com.sunil.automation.pages.HomePage;
 import com.sunil.automation.pages.LoginPage;
+import com.sunil.automation.testdata.LoginTestData;
 
 public class LoginTest extends BaseTest {
 
@@ -15,7 +16,8 @@ public class LoginTest extends BaseTest {
 
         HomePage homePage = new HomePage(driver);
 
-        LoginPage loginPage = homePage.navigateToLoginPage();
+        LoginPage loginPage =
+                homePage.navigateToLoginPage();
 
         Assert.assertEquals(
                 loginPage.getLoginHeading(),
@@ -23,20 +25,27 @@ public class LoginTest extends BaseTest {
                 "Login page heading verification failed");
     }
 
-    @Test(groups = {"regression", "negative"})
-    public void verifyLoginWithInvalidCredentials() {
+    @Test(
+        groups = {"regression", "negative"},
+        dataProvider = "invalidLoginData",
+        dataProviderClass = LoginTestData.class
+    )
+    public void verifyLoginWithInvalidCredentials(
+            String email, String password) {
 
         HomePage homePage = new HomePage(driver);
 
-        LoginPage loginPage = homePage.navigateToLoginPage();
+        LoginPage loginPage =
+                homePage.navigateToLoginPage();
 
-        loginPage.login(
-                "invalid-user@example.invalid",
-                "InvalidPassword123");
+        loginPage.login(email, password);
 
         Assert.assertEquals(
                 loginPage.getLoginErrorMessage(),
                 "Your email or password is incorrect!",
                 "Invalid login error verification failed");
+
+        System.out.println(
+                "Invalid login successfully validated: " + email);
     }
 }

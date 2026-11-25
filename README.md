@@ -94,18 +94,19 @@ mvn clean test "-Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER"
 
 
 
+
 ## Latest Verified Test Result
 
 | Metric | Result |
 |---|---|
-| Tests Executed | 5 |
-| Passed | 5 |
+| Tests Executed | 7 |
+| Passed | 7 |
 | Failed | 0 |
 | Errors | 0 |
 | Skipped | 0 |
 | Build Status | SUCCESS |
 | Browser | Chrome |
-| Execution Time | 104.9 seconds |
+| Execution Time | 86.33 seconds |
 
 ## Automated Test Scenarios
 
@@ -113,9 +114,19 @@ mvn clean test "-Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER"
 |---|---|---|---|
 | TC_HOME_001 | Homepage title verification | Smoke | PASS |
 | TC_LOGIN_001 | Login page navigation | Functional | PASS |
-| TC_LOGIN_002 | Login with invalid credentials | Negative | PASS |
+| TC_LOGIN_002 | Invalid login - Dataset 1 | Data-driven | PASS |
+| TC_LOGIN_003 | Invalid login - Dataset 2 | Data-driven | PASS |
+| TC_LOGIN_004 | Invalid login - Dataset 3 | Data-driven | PASS |
 | TC_REG_001 | Registration and account deletion | End-to-End | PASS |
-| TC_AUTH_001 | Valid login, logout and account cleanup | End-to-End | PASS |
+| TC_AUTH_001 | Valid login and logout | End-to-End | PASS |
+
+## Framework Reliability Enhancements
+
+- Data-driven testing using TestNG DataProvider.
+- Centralized Chrome advertisement blocking using CDP.
+- Diagnostic screenshots for element timeouts and intercepted clicks.
+- Failure diagnostics including locator, current URL and page title.
+
 
 
 
