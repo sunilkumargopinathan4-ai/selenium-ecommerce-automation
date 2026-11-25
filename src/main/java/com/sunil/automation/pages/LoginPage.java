@@ -41,4 +41,25 @@ public class LoginPage extends BasePage {
     public String getLoginErrorMessage() {
         return getText(errorMessage);
     }
+    private final By signupName =
+            By.cssSelector("[data-qa='signup-name']");
+
+    private final By signupEmail =
+            By.cssSelector("[data-qa='signup-email']");
+
+    private final By signupButton =
+            By.cssSelector("[data-qa='signup-button']");
+    
+    public RegistrationPage signup(String name, String email) {
+
+        enterText(signupName, name);
+
+        enterText(signupEmail, email);
+
+        click(signupButton);
+
+        return new RegistrationPage(driver);
+    }
 }
+    
+    
