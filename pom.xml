@@ -46,6 +46,14 @@
     <scope>test</scope>
 </dependency>
 
+<!-- Allure Reporting -->
+<dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-testng</artifactId>
+    <version>2.35.1</version>
+    <scope>test</scope>
+</dependency>
+
     </dependencies>
 
     <build>
@@ -62,6 +70,16 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.4</version>
             </plugin>
+            
+            <!-- Allure Maven Report Plugin -->
+<plugin>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-maven</artifactId>
+    <version>2.16.1</version>
+    <configuration>
+        <reportVersion>2.39.0</reportVersion>
+    </configuration>
+</plugin>
 
         </plugins>
     </build>

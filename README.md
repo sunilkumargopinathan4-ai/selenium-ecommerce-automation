@@ -135,6 +135,62 @@ mvn clean test "-Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER"
 | TC_API_004 | POST | /api/searchProduct | Missing search parameter | PASS |
 | TC_API_005 | POST | /api/verifyLogin | Invalid credentials | PASS |
 
+
+
+
+
+## Allure Reporting
+
+- Interactive test execution dashboard.
+- Individual test results and execution duration.
+- Failure classification and exception details.
+- Automatic screenshot attachments for failed UI tests.
+- Maven-based report generation.
+
+Generate and view the report locally:
+
+    mvn allure:serve
+
+## Continuous Integration - GitHub Actions
+
+The framework includes a GitHub Actions workflow
+for automated cloud-based test execution.
+
+Pipeline features:
+
+- Automatic execution on pushes to the main branch.
+- Manual workflow execution.
+- Ubuntu 24.04 runner.
+- Java 21 and Maven dependency caching.
+- Headless Chrome execution.
+- Selenium UI and REST Assured API tests.
+- Automatic Allure report generation.
+- Downloadable test reports and failure screenshots.
+
+CI verification status: Pending first cloud execution.
+
+## Known Limitations
+
+- The public demo website may experience server
+  overload and intermittent availability issues.
+- Screenshot capture requires an active browser session.
+- Firefox and Edge execution are not yet verified.
+- Headless execution currently supports Chrome.
+
+
+
+## Automated Failure Handling
+
+- Global TestNG listener using IInvokedMethodListener.
+- Automatic screenshots for failed UI test methods.
+- Reusable screenshot utility with unique filenames.
+- Failure diagnostics including URL, page title and exception.
+- Separate handling for UI and API failures.
+- Dedicated intentional failure probe to verify screenshot capture.
+
+The failure probe is excluded from normal regression execution.
+
+
 ## API Automation Features
 
 - REST Assured integration with TestNG.

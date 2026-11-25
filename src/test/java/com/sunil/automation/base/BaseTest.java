@@ -23,7 +23,11 @@ public class BaseTest {
 
         driver = DriverFactory.createDriver(browser);
 
-        driver.manage().window().maximize();
+        if (!Boolean.parseBoolean(
+                System.getProperty("headless", "false"))) {
+
+            driver.manage().window().maximize();
+        }
 
         driver.manage().timeouts().pageLoadTimeout(
                 Duration.ofSeconds(Integer.parseInt(
@@ -38,5 +42,9 @@ public class BaseTest {
         if (driver != null) {
             driver.quit();
         }
+    }
+    public WebDriver getDriver() {
+
+        return driver;
     }
 }
