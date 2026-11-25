@@ -55,4 +55,13 @@ public class ProductsPage extends BasePage {
 
         return names;
     }
+    public ProductDetailsPage openProductDetails(int productId) {
+
+        By viewProductLink = By.cssSelector(
+                "a[href='/product_details/" + productId + "']");
+
+        click(viewProductLink);
+
+        return new ProductDetailsPage(driver);
+    }
 }

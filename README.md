@@ -91,22 +91,18 @@ For environments requiring a manually configured ChromeDriver:
 mvn clean test "-Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER"
 ```
 
-
-
-
-
 ## Latest Verified Test Result
 
 | Metric | Result |
 |---|---|
-| Tests Executed | 7 |
-| Passed | 7 |
+| Tests Executed | 11 |
+| Passed | 11 |
 | Failed | 0 |
 | Errors | 0 |
 | Skipped | 0 |
 | Build Status | SUCCESS |
 | Browser | Chrome |
-| Execution Time | 86.33 seconds |
+| Execution Time | 125.2 seconds |
 
 ## Automated Test Scenarios
 
@@ -119,6 +115,12 @@ mvn clean test "-Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER"
 | TC_LOGIN_004 | Invalid login - Dataset 3 | Data-driven | PASS |
 | TC_REG_001 | Registration and account deletion | End-to-End | PASS |
 | TC_AUTH_001 | Valid login and logout | End-to-End | PASS |
+| TC_PROD_001 | All Products page validation | Functional | PASS |
+| TC_PROD_002 | Product search validation | Functional | PASS |
+| TC_CART_001 | Cart quantity, price and total validation | Functional | PASS |
+| TC_CART_002 | Product removal and empty cart validation | Functional | PASS |
+
+
 
 ## Framework Reliability Enhancements
 
