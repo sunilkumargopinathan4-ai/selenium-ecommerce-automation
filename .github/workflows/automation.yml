@@ -41,6 +41,34 @@ jobs:
           google-chrome --version
           "$CHROMEWEBDRIVER/chromedriver" --version
 
+      - name: Application health check
+        run: |
+          echo "Checking application availability..."
+
+          if ! curl -fsSL --max-time 30 \
+            https://automationexercise.com/ \
+            -o /tmp/homepage.html; then
+            echo "::error::Application homepage unavailable"
+            exit 1
+          fi
+
+          if ! grep -Eiq '<title>[[:space:]]*Automation Exercise[[:space:]]*</title>' /tmp/homepage.html; then
+            echo "::error::Expected homepage not received"
+            exit 1
+          fi
+
+          if ! curl -fsSL --max-time 30 \
+            https://automationexercise.com/api/productsList \
+            -o /tmp/products.json; then
+            echo "::error::Application API unavailable"
+            exit 1
+          fi
+
+          python3 -c 'import json; data=json.load(open("/tmp/products.json")); assert data["responseCode"] == 200 and data["products"]'
+
+          echo "Application health check passed"
+
+
       - name: Execute UI and API automation tests
         run: |
           mvn -B clean test \
