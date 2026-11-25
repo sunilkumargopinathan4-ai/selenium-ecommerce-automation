@@ -1,6 +1,9 @@
 
 # E-Commerce Test Automation Framework
 
+
+[![E-Commerce Automation Suite](https://github.com/sunilkumargopinathan4-ai/selenium-ecommerce-automation/actions/workflows/automation.yml/badge.svg)](https://github.com/sunilkumargopinathan4-ai/selenium-ecommerce-automation/actions/workflows/automation.yml)
+
 An independent web automation framework built using Java,
 Selenium WebDriver, TestNG, Maven and Page Object Model.
 
@@ -167,7 +170,46 @@ Pipeline features:
 - Automatic Allure report generation.
 - Downloadable test reports and failure screenshots.
 
-CI verification status: Pending first cloud execution.
+
+## Test Execution Results
+
+Successfully verified on November 25, 2026.
+
+| Execution Type | Total | Passed | Failed |
+|---|---:|---:|---:|
+| Local Execution | 17 | 17 | 0 |
+| GitHub Actions | 17 | 17 | 0 |
+
+- Selenium UI test executions: 12
+- REST Assured API tests: 5
+- Cloud test execution duration: 119.6 seconds
+- Pass rate for verified execution: 100%
+- Allure report generation: Successful
+- CI artifact upload: Successful
+
+The framework has been successfully executed
+locally and on GitHub-hosted Ubuntu runners
+using Java 21 and headless Chrome.
+
+The public demo application may experience
+intermittent server availability issues.
+An application health check is included in
+the CI pipeline to identify environment
+availability problems before test execution.
+
+## CI Execution Evidence
+
+[View successful GitHub Actions execution](https://github.com/sunilkumargopinathan4-ai/selenium-ecommerce-automation/actions/runs/45616710687)
+
+## Execution Evidence
+
+### Successful GitHub Actions Execution
+
+![GitHub Actions Success](docs/screenshots/github-actions-success.png)
+
+All 17 test executions passed, with zero failures,
+errors or skipped tests.
+
 
 ## Known Limitations
 
