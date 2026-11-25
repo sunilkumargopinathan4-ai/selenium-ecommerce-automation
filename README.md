@@ -92,20 +92,23 @@ mvn clean test "-Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER"
 ```
 
 
+
 ## Latest Verified Test Result
 
 | Metric | Result |
 |---|---|
-| Tests Executed | 12 |
-| Passed | 12 |
+| Tests Executed | 17 |
+| UI Tests | 12 |
+| API Tests | 5 |
+| Passed | 17 |
 | Failed | 0 |
 | Errors | 0 |
 | Skipped | 0 |
 | Build Status | SUCCESS |
 | Browser | Chrome |
-| Execution Time | 103.8 seconds |
+| Execution Time | 139.2 seconds |
 
-## Automated Test Scenarios
+## Automated UI Test Scenarios
 
 | Test ID | Scenario | Type | Status |
 |---|---|---|---|
@@ -120,8 +123,27 @@ mvn clean test "-Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER"
 | TC_PROD_002 | Product search validation | Functional | PASS |
 | TC_CART_001 | Cart quantity, price and total validation | Functional | PASS |
 | TC_CART_002 | Product removal and empty cart validation | Functional | PASS |
-| TC_CHECKOUT_001 | Complete checkout, demo payment and account cleanup | End-to-End | PASS |
+| TC_CHECKOUT_001 | Complete checkout and account cleanup | End-to-End | PASS |
 
+## Automated API Test Scenarios
+
+| Test ID | Method | Endpoint | Scenario | Status |
+|---|---|---|---|---|
+| TC_API_001 | GET | /api/productsList | Retrieve products | PASS |
+| TC_API_002 | GET | /api/brandsList | Retrieve brands | PASS |
+| TC_API_003 | POST | /api/searchProduct | Search product | PASS |
+| TC_API_004 | POST | /api/searchProduct | Missing search parameter | PASS |
+| TC_API_005 | POST | /api/verifyLogin | Invalid credentials | PASS |
+
+## API Automation Features
+
+- REST Assured integration with TestNG.
+- Centralized API request configuration.
+- GET and POST request automation.
+- HTTP status and JSON response code validation.
+- JSON response extraction using JsonPath.
+- Positive and negative API scenarios.
+- Independent API execution without browser initialization.
 
 
 
